@@ -64,7 +64,7 @@ def build_model():
 
     vggmodel.compile(optimizer = 'adam',loss = 'categorical_crossentropy',metrics=['accuracy'])
     
-    vggmodel.load_weights('C:\\Users\\dell\\Downloads\\vggmodelweight.h5')
+    #vggmodel.load_weights('C:\\Users\\dell\\Downloads\\vggmodelweight.h5')
     vggmodel.trainable=False
     
     return vggmodel
@@ -91,22 +91,22 @@ def predict_and_plot5(imagelist,model):
 
       
 def read_excel_data():
-    path = os.path.join("D:\SIH","Ann-Aztecs","satellliteimage.xlsx")
+    path = "satellliteimage.xlsx"
     ex_df = pd.read_excel(path)
     return ex_df
 def farmer_data():
-    path = os.path.join("D:\SIH","Ann-Aztecs","Farmlanddatabase.xlsx")
+    path = "Farmlanddatabase.xlsx"
     farmer_df = pd.read_excel(path)
     return farmer_df
 
 def search_all_images(ex_df):
-    main_path = os.path.join("D:\SIH","Ann-Aztecs","satimage")
+    main_path = "satimage"
     df = ex_df.copy()
     imagelist = [os.path.join(main_path,(str(df['ImageId'][i])+".jpeg")) for i in range(df.shape[0])]
     df['imagelist']=imagelist
     return df
 def read_farmer_production(df):
-    path = os.path.join("D:\SIH","Ann-Aztecs","Farmlanddatabase.xlsx")
+    path = "Farmlanddatabase.xlsx"
     farmer_df = pd.read_excel(path)
     new_df = pd.merge(df,farmer_df,on = ['LandRecordNo'],how = 'left')
     record_used = ['LandRecordNo','ImageId','LandArea(in Acre)','imagelist']
@@ -179,7 +179,7 @@ def dbuild_model():
                              ,Dense(120,activation='relu'),Dense(120,activation='relu'),Dense(1,activation='sigmoid')])
 
     vggmodel.compile(optimizer = 'adam',loss = 'binary_crossentropy',metrics=['accuracy'])
-    vggmodel.load_weights('floodmodel.h5')
+    #vggmodel.load_weights('floodmodel.h5')
     vggmodel.trainable=False
     
     
