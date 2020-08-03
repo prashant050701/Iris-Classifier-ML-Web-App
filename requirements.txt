@@ -4,3 +4,9 @@ scikit-learn==0.22.1
 matplotlib>=1.4.3
 pandas>=0.19
 streamlit
+seaborn
+tensorflow
+keras
+opencv-python
+pillow
+xlrd
