@@ -1,12 +1,7 @@
 numpy
 scipy
-scikit-learn
 matplotlib
 pandas
-pillow
 opencv-python
 xlrd
 streamlit
-seaborn
-keras
-
