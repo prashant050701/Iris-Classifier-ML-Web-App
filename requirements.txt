@@ -8,6 +8,5 @@ opencv-python
 xlrd
 streamlit
 seaborn
-tensorflow==2.2
 keras
 
